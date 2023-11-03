@@ -1,0 +1,27 @@
+<html>
+<header>
+Enter your password twice
+</header>
+<body>
+	<label for="pass1">Password:</label>
+	<input type="text" id="pass1" name="pass1"><br>
+	<label for="pass1">Confirm Password</label>
+	<input type="text" id="pass2" name="pass2"><br>
+	<p id="r"></p>
+	<button onclick = "validate()">Submit</button>
+
+
+<script>
+	function validate() {
+		var value1 = document.getElementById("pass1").value;
+		var value2 = document.getElementById("pass2").value;
+		var result = document.getElementById("r");
+		if (value1.length < 8) {
+			result.innerHTML = "Not long enough. Password must be at least 8 characters.";
+		} else if (value1 === value2) {
+			result.innerHTML = "The passwords are identical.";
+		} else {
+			result.innerHTML = "The passwords need to be identical.";
+		}
+	}
+</script>
